@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import LinkCard from "./ui/link-card";
 
 export interface LinksProps {
-    id: string,
+    id: number,
     title: string,
     subtitle?: string,
     url: string,
@@ -16,9 +16,11 @@ export interface LinksProps {
     color: string,
 }
 
+let id = 0;
+
 const links: LinksProps[] = [
     {
-        id: "1",
+        id: id++,
         title: "GitHub",
         subtitle: "Check out my code",
         url: "https://github.com/Hamzeh-Dev",
@@ -26,7 +28,7 @@ const links: LinksProps[] = [
         color: "hover:bg-gray-100 dark:hover:bg-gray-800",
     },
     {
-        id: "2",
+        id: id++,
         title: "Twitter",
         subtitle: "Follow me for updates",
         url: "https://twitter.com",
@@ -34,7 +36,7 @@ const links: LinksProps[] = [
         color: "hover:bg-blue-50 dark:hover:bg-blue-900/20",
     },
     {
-        id: "3",
+        id: id++,
         title: "LinkedIn",
         subtitle: "Let's connect professionally",
         url: "https://www.linkedin.com/in/hamzeh-al-naimi-8a42852b6",
@@ -42,7 +44,7 @@ const links: LinksProps[] = [
         color: "hover:bg-blue-50 dark:hover:bg-blue-900/20",
     },
     {
-        id: "4",
+        id: id++,
         title: "Portfolio Website",
         subtitle: "View my work",
         url: "https://hamzeh-naimi.vercel.app/",
@@ -50,7 +52,7 @@ const links: LinksProps[] = [
         color: "hover:bg-green-50 dark:hover:bg-green-900/20",
     },
     {
-        id: "5",
+        id: id++,
         title: "Email Me",
         subtitle: "Get in touch",
         url: "mailto:hamzehalnaimi3@gmail.com",
@@ -58,7 +60,7 @@ const links: LinksProps[] = [
         color: "hover:bg-red-50 dark:hover:bg-red-900/20",
     },
     {
-        id: "6",
+        id: id++,
         title: "YouTube",
         subtitle: "Subscribe to my channel",
         url: "https://youtube.com",
@@ -66,7 +68,7 @@ const links: LinksProps[] = [
         color: "hover:bg-red-50 dark:hover:bg-red-900/20",
     },
     {
-        id: "7",
+        id: id++,
         title: "Instagram",
         subtitle: "Follow my journey",
         url: "https://instagram.com",
@@ -74,7 +76,7 @@ const links: LinksProps[] = [
         color: "hover:bg-pink-50 dark:hover:bg-pink-900/20",
     },
     {
-        id: "8",
+        id: id++,
         title: "Spotify Playlist",
         subtitle: "Listen to my favorites",
         url: "https://spotify.com",
@@ -128,18 +130,24 @@ export default function LinktreePage() {
             <div className="container mx-auto px-4 py-8 max-w-md">
                 {/* Profile Section */}
                 <div className="text-center mb-8 animate-fade-in">
+                    
+                    {/* Image Here */}
                     <div className="relative w-24 h-24 mx-auto mb-4">
                         <Image
                             src="/default.jpg"
                             alt="Profile Picture"
                             width={96}
                             height={96}
-                            className="rounded-full border-4 border-white dark:border-gray-700 shadow-lg object-cover"
+                            className="w-24 h-24 rounded-full border-4 border-white dark:border-gray-700 shadow-lg object-cover"
                         />
                     </div>
+
+                    {/* Name Here */}
                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Hamzeh-Dev</h1>
+
+                    {/* Header Here */}
                     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed max-w-xs mx-auto">
-                        Full-stack developer, designer, and content creator. Building amazing digital experiences.
+                        Software engineer turning ideas into real products.
                     </p>
                 </div>
 
